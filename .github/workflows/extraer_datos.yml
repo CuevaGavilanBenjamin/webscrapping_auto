@@ -27,12 +27,11 @@ jobs:
       run: |
         python EXTRACT/extract.py
         python LOAD/load.py
-        python TRANSFORM/transform.py
 
     - name: Subir cambios si los hubo
       run: |
-        git config --global user.email "tu_email@ejemplo.com"
-        git config --global user.name "Tu Nombre"
+        git config --global user.email "benjamin.cueva.g@uni.pe"
+        git config --global user.name "CuevaGavilanBenjamin"
         git add .
         git commit -m "Actualización automática diaria de datos" || echo "No hay cambios para commitear"
         git push
