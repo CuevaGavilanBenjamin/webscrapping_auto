@@ -1,4 +1,4 @@
-name: Automatizar Extract, Load y Transform
+name: Automatizar Extract, Load y Transform.
 
 on:
   schedule:
