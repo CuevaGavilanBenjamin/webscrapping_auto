@@ -2,7 +2,9 @@ import pandas as pd
 import os
 from datetime import datetime
 # Directorio de los datos
-base_path = "../EXTRACT/"
+base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'EXTRACT')
+
+
 
 # Obtener la fecha actual para el reporte
 hoy = datetime.today().strftime("%d-%m-%Y")
@@ -29,3 +31,5 @@ final_df = pd.concat(all_data, ignore_index=True)
 
 # Guardar el archivo CSV consolidado
 final_df.to_csv("reporte_consolidado.csv", index=False)
+
+print (base_path)
