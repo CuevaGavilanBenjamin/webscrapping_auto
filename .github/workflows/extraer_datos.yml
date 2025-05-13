@@ -48,5 +48,6 @@ jobs:
           git config --global user.name "CuevaGavilanBenjamin"
           git config --global user.email "benjamin.cueva.g@uni.pe"
           git add EXTRACT/
+          git add TRANSFORM/
           git commit -m "Automated ETL data update: $(date +'%d-%m-%Y')" || echo "No hay cambios para commitear"
           git push

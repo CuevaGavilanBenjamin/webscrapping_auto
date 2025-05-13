@@ -33,5 +33,6 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 ruta_archivo=os.path.join(script_dir,"reporte_consolidado.csv")
 # Guardar el archivo CSV consolidado
 final_df.to_csv(ruta_archivo, index=False)
+print(f"📝 Se guardará en: {ruta_archivo}")
 
 print (base_path)
