@@ -1,11 +1,13 @@
 from selenium import webdriver  # type: ignore
 from selenium.webdriver.common.by import By  # type: ignore
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service  # Importar Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 import json
 from datetime import datetime
+from webdriver_manager.chrome import ChromeDriverManager  # Importar el WebDriver Manager
 
 # Configurar Chrome con user-agent
 options = Options()
@@ -16,8 +18,11 @@ options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                      "AppleWebKit/537.36 (KHTML, like Gecko) "
                      "Chrome/123.0.0.0 Safari/537.36")
 
-# Iniciar el navegador
-driver = webdriver.Chrome(options=options)
+# Iniciar el servicio de ChromeDriver
+service = Service(ChromeDriverManager().install())
+
+# Iniciar el navegador con WebDriver Manager para manejar ChromeDriver automáticamente
+driver = webdriver.Chrome(service=service, options=options)
 
 try:
     # Entrar a la página de la SBS
