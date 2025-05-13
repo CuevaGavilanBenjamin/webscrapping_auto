@@ -26,7 +26,7 @@ for folder_name in os.listdir(base_path):
             all_data.append(df)
         except:
             print(f"No se pudo leer el archivo para {folder_name}")
-
+print(all_data)
 # Concatenar todos los DataFrames en uno solo
 final_df = pd.concat(all_data, ignore_index=True)
 script_dir = os.path.dirname(os.path.abspath(__file__))
