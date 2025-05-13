@@ -5,6 +5,9 @@ on:
     - cron: '0 19 * * *'  # Todos los días a las 19:00 UTC (2:00 PM Perú)
   workflow_dispatch:       # Permite ejecutarlo manualmente
 
+permissions:
+  contents: write  # 👈 Necesario para hacer commit y push
+
 jobs:
   etl:
     runs-on: ubuntu-latest
@@ -24,7 +27,7 @@ jobs:
           pip install -r requirements.txt
           pip install selenium webdriver-manager
 
-      - name: 🌐 Instalar Google Chrome (opcional si no se usa webdriver-manager)
+      - name: 🌐 Instalar Google Chrome
         run: |
           sudo apt-get update
           sudo apt-get install -y wget curl unzip
@@ -35,3 +38,15 @@ jobs:
           python EXTRACT/extract.py
           python TRANSFORM/transform.py
 
+      - name: 📂 Verificar contenido generado
+        run: |
+          echo "Archivos generados en EXTRACT:"
+          ls -R EXTRACT/
+
+      - name: ✅ Commit y push de archivos generados
+        run: |
+          git config --global user.name "CuevaGavilanBenjamin"
+          git config --global user.email "benjamin.cueva.g@uni.pe"
+          git add EXTRACT/
+          git commit -m "Automated ETL data update: $(date +'%d-%m-%Y')" || echo "No hay cambios para commitear"
+          git push
