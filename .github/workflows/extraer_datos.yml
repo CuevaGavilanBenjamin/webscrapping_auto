@@ -20,13 +20,13 @@ jobs:
 
     - name: Instalar dependencias
       run: |
-        python -m pip install --upgrade pip
-        pip install pandas matplotlib
-
+        python -m pip install --upgrade pip  # Asegura que pip esté actualizado
+        pip install -r requirements.txt  # Instala las dependencias del archivo requirements.txt
+    
     - name: Ejecutar scripts de extracción, carga y transformación
       run: |
         python EXTRACT/extract.py
-        python LOAD/load.py
+        python TRANSFORM/transform.py
 
     - name: Subir cambios si los hubo
       run: |
