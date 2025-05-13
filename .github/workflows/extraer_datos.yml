@@ -35,10 +35,3 @@ jobs:
           python EXTRACT/extract.py
           python TRANSFORM/transform.py
 
-      - name: 💾 Subir cambios (si los hay)
-        run: |
-          git config --global user.email "benjamin.cueva.g@uni.pe"
-          git config --global user.name "CuevaGavilanBenjamin"
-          git add .
-          git commit -m "Actualización automática diaria de datos" || echo "Sin cambios"
-          git push
