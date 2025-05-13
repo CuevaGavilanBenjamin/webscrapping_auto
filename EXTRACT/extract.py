@@ -8,7 +8,7 @@ import os
 import json
 from datetime import datetime
 from webdriver_manager.chrome import ChromeDriverManager  # Importar el WebDriver Manager
-
+from zoneinfo import ZoneInfo  # disponible desde Python 3.9
 # Configurar Chrome con user-agent
 options = Options()
 options.add_argument('--headless=new')
@@ -63,7 +63,7 @@ try:
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
     # Ruta absoluta a la carpeta EXTRACT + subcarpeta con la fecha
-    fecha_hoy = datetime.now().strftime('%d-%m-%Y')
+    fecha_hoy = datetime.now(ZoneInfo("America/Lima")).strftime('%d-%m-%Y')
     ruta_carpeta = os.path.join(script_dir, fecha_hoy)
     os.makedirs(ruta_carpeta, exist_ok=True)
 

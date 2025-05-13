@@ -1,13 +1,14 @@
 import pandas as pd
 import os
 from datetime import datetime
+from zoneinfo import ZoneInfo  # disponible desde Python 3.9
 # Directorio de los datos
 base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'EXTRACT')
 print("ESTA ES LA RUTA +++", base_path)
 
 
 # Obtener la fecha actual para el reporte
-hoy = datetime.today().strftime("%d-%m-%Y")
+hoy = datetime.now(ZoneInfo("America/Lima")).strftime('%d-%m-%Y')
 
 # Lista para almacenar los DataFrames
 all_data = []
@@ -28,8 +29,9 @@ for folder_name in os.listdir(base_path):
 
 # Concatenar todos los DataFrames en uno solo
 final_df = pd.concat(all_data, ignore_index=True)
-
+script_dir = os.path.dirname(os.path.abspath(__file__))
+ruta_archivo=os.path.join(script_dir,"reporte_consolidado.csv")
 # Guardar el archivo CSV consolidado
-final_df.to_csv("reporte_consolidado.csv", index=False)
+final_df.to_csv(ruta_archivo, index=False)
 
 print (base_path)
