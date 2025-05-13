@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 # Directorio de los datos
 base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'EXTRACT')
-
+print("ESTA ES LA RUTA +++", base_path)
 
 
 # Obtener la fecha actual para el reporte

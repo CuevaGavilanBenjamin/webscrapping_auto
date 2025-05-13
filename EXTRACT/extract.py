@@ -59,12 +59,16 @@ try:
     for d in datos:
         print(d)
 
-    # Guardar en archivo JSON
-    fecha_hoy = datetime.now().strftime('%d-%m-%Y')
-    ruta_carpeta = f"{fecha_hoy}/"
-    os.makedirs(ruta_carpeta, exist_ok=True)
-    ruta_archivo = os.path.join(ruta_carpeta, 'sbs_tipo_cambio.json')
+    # Obtener la ruta absoluta del directorio actual del script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
+    # Ruta absoluta a la carpeta EXTRACT + subcarpeta con la fecha
+    fecha_hoy = datetime.now().strftime('%d-%m-%Y')
+    ruta_carpeta = os.path.join(script_dir, fecha_hoy)
+    os.makedirs(ruta_carpeta, exist_ok=True)
+
+    # Ruta completa del archivo
+    ruta_archivo = os.path.join(ruta_carpeta, 'sbs_tipo_cambio.json')
     with open(ruta_archivo, 'w', encoding='utf-8') as f:
         json.dump(datos, f, indent=4, ensure_ascii=False)
 
