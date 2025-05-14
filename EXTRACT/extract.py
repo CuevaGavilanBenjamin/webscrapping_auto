@@ -44,9 +44,9 @@ try:
             compra = columnas[1].text.strip()
             venta = columnas[2].text.strip()
 
-            if compra == "0" and venta != "0":
+            if compra == "" and venta != "":
                 compra = venta
-            elif venta == "0" and compra != "0":
+            elif venta == "" and compra != "":
                 venta = compra
 
             datos.append({
