@@ -43,7 +43,7 @@ try:
             moneda = columnas[0].text.strip()
             compra = columnas[1].text.strip()
             venta = columnas[2].text.strip()
-
+            #Hay casos en los que aparecen espacios vacios en la venta o en la compra por eso se hizo lo siguiente
             if compra == "" and venta != "":
                 compra = venta
             elif venta == "" and compra != "":
