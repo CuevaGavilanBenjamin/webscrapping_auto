@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from datetime import datetime
-from zoneinfo import ZoneInfo  # disponible desde Python 3.9
+from zoneinfo import ZoneInfo  
 
 # Ruta base de EXTRACT
 base_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'EXTRACT')
