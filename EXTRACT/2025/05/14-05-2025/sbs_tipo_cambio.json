@@ -7,7 +7,7 @@
     {
         "moneda": "Dólar Australiano",
         "compra": "2.161",
-        "venta": ""
+        "venta": "2.161"
     },
     {
         "moneda": "Dólar Canadiense",
@@ -17,7 +17,7 @@
     {
         "moneda": "Peso Chileno",
         "compra": "0.003",
-        "venta": ""
+        "venta": "0.003"
     },
     {
         "moneda": "Libra Esterlina",
@@ -32,7 +32,7 @@
     {
         "moneda": "Franco Suizo",
         "compra": "4.020",
-        "venta": ""
+        "venta": "4.020"
     },
     {
         "moneda": "Euro",

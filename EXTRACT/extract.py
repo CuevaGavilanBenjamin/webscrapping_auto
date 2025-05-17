@@ -59,13 +59,17 @@ try:
     for d in datos:
         print(d)
 
-    # Obtener la ruta absoluta del directorio actual del script
-    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Obtener la fecha actual en zona horaria de Lima
+    fecha = datetime.now(ZoneInfo("America/Lima"))
+    anio = fecha.strftime('%Y')           # Ej: '2025'
+    mes = fecha.strftime('%m')            # Ej: '05'
+    dia = fecha.strftime('%d-%m-%Y')      # Ej: '17-05-2025'
 
-    # Ruta absoluta a la carpeta EXTRACT + subcarpeta con la fecha
-    fecha_hoy = datetime.now(ZoneInfo("America/Lima")).strftime('%d-%m-%Y')
-    ruta_carpeta = os.path.join(script_dir, fecha_hoy)
+    # Construir ruta completa: EXTRACT/año/mes/día
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    ruta_carpeta = os.path.join(script_dir, '..', 'EXTRACT', anio, mes, dia)
     os.makedirs(ruta_carpeta, exist_ok=True)
+
 
     # Ruta completa del archivo
     ruta_archivo = os.path.join(ruta_carpeta, 'sbs_tipo_cambio.json')
