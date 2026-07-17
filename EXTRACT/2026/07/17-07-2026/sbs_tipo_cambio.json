@@ -1,0 +1,42 @@
+[
+    {
+        "moneda": "Dólar de N.A.",
+        "compra": "3.389",
+        "venta": "3.396"
+    },
+    {
+        "moneda": "Dólar Australiano",
+        "compra": "2.536",
+        "venta": "2.536"
+    },
+    {
+        "moneda": "Dólar Canadiense",
+        "compra": "2.273",
+        "venta": "2.424"
+    },
+    {
+        "moneda": "Libra Esterlina",
+        "compra": "4.305",
+        "venta": "4.708"
+    },
+    {
+        "moneda": "Yen Japonés",
+        "compra": "0.021",
+        "venta": "0.022"
+    },
+    {
+        "moneda": "Peso Mexicano",
+        "compra": "0.194",
+        "venta": "0.201"
+    },
+    {
+        "moneda": "Franco Suizo",
+        "compra": "4.179",
+        "venta": "4.620"
+    },
+    {
+        "moneda": "Euro",
+        "compra": "3.608",
+        "venta": "4.086"
+    }
+]
